@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Link from 'next/link';
+import Date from '../components/Date/Date';
 
 import Layout, { siteTitle } from '../components/Layout/Layout';
 import utilStyles from '../styles/utils.module.css';
@@ -31,15 +33,14 @@ export default function Home({ allPostsData }) {
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={utilStyles.headingLg}>topics to understand</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ name, date, title }) => (
             <li className={utilStyles.listItem} key={name}>
-              {title}
-              <br />
-              {name}
-              <br />
-              {date}
+              <Link href={`/posts/${name}`}>{title}</Link>
+              <div className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </div>
             </li>
           ))}
         </ul>
