@@ -5,7 +5,7 @@ import utilStyles from '../../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Alfie S';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'NEXT  Learning';
 
 export default function Layout({ children, home }) {
   return (
@@ -25,7 +25,6 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-
       <header className={styles.header}>
         {home ? (
           <>
@@ -59,9 +58,7 @@ export default function Layout({ children, home }) {
           </>
         )}
       </header>
-
       <main>{children}</main>
-      
       <footer>
         {home ? (
             <Link href="/posts/FirstPost">go to posts</Link>
@@ -72,7 +69,6 @@ export default function Layout({ children, home }) {
           )
         }
       </footer>
-
     </div>
   );
 }
